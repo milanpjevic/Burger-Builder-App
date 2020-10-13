@@ -1,4 +1,4 @@
-Simple and not so pretty React App.
+Burger Builder App:
 
 1. npm install
 2. npm start
