@@ -1,2 +1,15 @@
-export const ADD_INGREDIENT = "ADD_INGREDIENT";
-export const REMOVE_INGREDIENT = "REMOVE_INGREDIENT";
+import * as actionType from "./actionType";
+
+export const addIngredient = name => {
+	return {
+		type: actionType.ADD_INGREDIENT,
+		ingredientName: name,
+	};
+};
+
+export const removeIngredient = name => {
+	return {
+		type: actionType.REMOVE_INGREDIENT,
+		ingredientName: name,
+	};
+};
