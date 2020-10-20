@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import * as actionType from "../../store/actions";
+import * as actionType from "../../store/actions/actionsType";
 
 import Aux from "../../hoc/ReactAux";
 import axios from "../../axios-orders";
