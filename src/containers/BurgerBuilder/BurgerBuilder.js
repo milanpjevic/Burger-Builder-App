@@ -3,9 +3,8 @@ import { connect } from "react-redux";
 import * as burgerBuilderActions from "../../store/actions/index";
 
 import Aux from "../../hoc/ReactAux";
-import axios from "../../axios-orders";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
-
+import axios from "../../axios-orders";
 import Burger from "../../components/Burger/Burger";
 import BuildControls from "../../components/Burger/BuildControls/BuildControls";
 import Modal from "../../components/UI/Modal/Modal";
@@ -15,20 +14,10 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 class BurgerBuilder extends Component {
 	state = {
 		purchasing: false,
-		loading: false,
-		error: false,
 	};
 
 	componentDidMount() {
 		console.log(this.props);
-		// axios
-		// 	.get("https://react-burgerbuilderapp-6195d.firebaseio.com/ingredients.json")
-		// 	.then(response => {
-		// 		this.setState({ ingredients: response.data });
-		// 	})
-		// 	.catch(error => {
-		// 		this.setState({ error: true });
-		// 	});
 	}
 
 	purchaseHandler = () => {
@@ -70,10 +59,6 @@ class BurgerBuilder extends Component {
 					price={this.props.price}
 				/>
 			);
-		}
-
-		if (this.state.loading) {
-			orderSummary = <Spinner />;
 		}
 
 		let burger = this.state.error ? <p>Ingredients can not be loaded.</p> : <Spinner />;
