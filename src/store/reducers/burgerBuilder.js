@@ -42,6 +42,7 @@ const reducer = (state = initalState, action) => {
 					cheese: action.ingredients.cheese,
 					meat: action.ingredients.meat,
 				},
+				totalPrice: 4,
 				error: false,
 			};
 		case actionType.FETCH_INGREDIENTS_FAILD:

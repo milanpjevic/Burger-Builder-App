@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import * as burgerBuilderActions from "../../store/actions/index";
+import * as actions from "../../store/actions/index";
 
 import Aux from "../../hoc/ReactAux";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
@@ -41,6 +41,7 @@ class BurgerBuilder extends Component {
 	};
 
 	purchaseContinueHandler = () => {
+		this.props.onInitPurchased();
 		this.props.history.push("/checkout");
 	};
 
@@ -100,9 +101,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		onIngredientAdded: ingName => dispatch(burgerBuilderActions.addIngredient(ingName)),
-		onIngredientRemove: ingName => dispatch(burgerBuilderActions.removeIngredient(ingName)),
-		onInitIngredients: () => dispatch(burgerBuilderActions.initIngredients()),
+		onIngredientAdded: ingName => dispatch(actions.addIngredient(ingName)),
+		onIngredientRemove: ingName => dispatch(actions.removeIngredient(ingName)),
+		onInitIngredients: () => dispatch(actions.initIngredients()),
+		onInitPurchased: () => dispatch(actions.purchaseInit()),
 	};
 };
 
